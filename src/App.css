@@ -32,15 +32,15 @@ body{
 .home{
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   padding: 20px; margin: 10% auto;
-  background-color: pink;
 }
 
 /* MovieList */
 
-.MovieListItem{
-  display: flex; flex-direction: column; align-items: center; padding: 10px; margin-bottom: 10px;
-  background-color: #ccc;
-}
+/*.MovieListItem{*/
+/*  display: flex; flex-direction: column; align-items: center; padding: 10px; margin-bottom: 10px;*/
+/*  border: 1px solid #ccc;*/
+/*}*/
+
 .MovieListItem-img{
   width: 120px; height: 150px;
 }
