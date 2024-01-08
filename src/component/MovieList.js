@@ -1,11 +1,10 @@
-import {Container} from "@mui/material";
 import {Button} from "@mui/material";
 import MovieListItem from "./MovieListItem";
+import {Container} from "@mui/material";
 
 function MovieList({items}){
     return(
-        <Container sx={{bgcolor:'yellow'}}>
-            <Button>container 안 확인해보기</Button>
+        <Container>
             <ul>
                 {items?.map((item)=>{
                     return (

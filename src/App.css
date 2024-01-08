@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 /* base */
+
 * {
   padding: 0;
   margin: 0;
@@ -29,18 +30,5 @@ body{
   background-color: #000;
 }
 
-.home{
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  padding: 20px; margin: 10% auto;
-}
 
-/* MovieList */
 
-/*.MovieListItem{*/
-/*  display: flex; flex-direction: column; align-items: center; padding: 10px; margin-bottom: 10px;*/
-/*  border: 1px solid #ccc;*/
-/*}*/
-
-.MovieListItem-img{
-  width: 120px; height: 150px;
-}

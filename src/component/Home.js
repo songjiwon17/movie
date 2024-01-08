@@ -17,8 +17,8 @@ function Home(){
         setItems(reviews);
     }
     useEffect(() => {
-        handleLoad(order);
-    }, [order])
+        handleLoad();
+    }, [])
 
     const MovieList = React.lazy(()=>import('./MovieList'));
 
