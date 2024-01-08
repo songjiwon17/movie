@@ -13,7 +13,7 @@ function Header(){
         <>
             <Grid container sx={{mb:10}}>
                 <Grid item xs>
-                    <Typography sx={{textAlign:'center'}} component="h1" variant="h2">MOVIE</Typography>
+                    <Typography sx={{textAlign:'center', fontWeight:'bold'}} component="h1" variant="h2">MOVIE</Typography>
                 </Grid>
                 <Grid item>
                     <Button><DarkModeIcon/></Button>

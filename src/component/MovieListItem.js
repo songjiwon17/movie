@@ -1,4 +1,4 @@
-import {Container, Box} from "@mui/material";
+import {Container} from "@mui/material";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -16,13 +16,13 @@ function MovieListItem({item}){
             <Card variant="outlined" sx={{ maxWidth: 120, bgcolor:'#ccc'}}>
                 <CardMedia>
                     <div className="MovieListItem">
-                        <img className="MovieListItem-img" src={item.imgUrl} alt={item.title}/>
+                        <img className="MovieListItem-img" src={item?.imgUrl} alt={item?.title}/>
                     </div>
                 </CardMedia>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        <h1>{item.title}</h1>
-                        <p>{formatDate(item.createdAt)}</p>
+                        <h1>{item?.title}</h1>
+                        <p>{formatDate(item?.createdAt)}</p>
                     </Typography>
                 </CardContent>
             </Card>
