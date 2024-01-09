@@ -1,16 +1,27 @@
-import { Container } from '@mui/material';
+import styled from "@emotion/styled";
+import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import {useState} from "react";
+import { OutlinedInput } from '@mui/material';
 
+const Container = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+`;
 function SearchForm(){
+    const [searchInput, setSearchInput] = useState('');
+    const handleChange = (e)=>{
+        setSearchInput(e.target.value);
+    }
+
     return(
-        <Container component='main' maxWidth='lg'>
-        <TextField sx={{mb:10, backgroundColor:'#ededed'}}
-          variant="filled"
-          label="찾고싶은 영화를 검색하세요."
-          type="search"
-          fullWidth
-        />
+        <Container>
+            <OutlinedInput
+                sx={{bgcolor: '#fff'}}
+                onChange={handleChange}
+            />
+            <Button>검색</Button>
         </Container>
-    )
+    );
 }
 export default SearchForm;
