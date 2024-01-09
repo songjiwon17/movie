@@ -1,27 +1,33 @@
+import {useState} from "react";
 import styled from "@emotion/styled";
 import {Typography} from "@mui/material";
-import Card from "@mui/material/Card";
+import { Button } from '@mui/material';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import DeleteOutlineSharpIcon from '@mui/icons-material/DeleteOutlineSharp';
 
 const MovieCard = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
 `;
 
-function MovieListItem({item}){
+function MovieListItem({item, onDelete}){
+    const [like, setLike ] = useState(0);
 
     function formatDate(value){
         const date = new Date(value);
         return `${date.getFullYear()}. ${date.getMonth() + 1}. ${date.getDate()}`
     }
 
+    const handleDeleteClick = ()=> onDelete(item.id);
+
     return(
         <MovieCard>
             <img className="MovieListItem-img" src={item?.imgUrl} alt={item?.title}/>
-            <Typography sx={{bgcolor: 'pink'}} gutterBottom variant="h5" component="div">
+            <Typography>
                 <h1>{item?.title}</h1>
                 <p>{formatDate(item?.createdAt)}</p>
             </Typography>
+            <FavoriteBorderIcon onClick = {()=>{setLike(like + 1)}} sx={{color: 'red'}}/>{like}
+            <DeleteOutlineSharpIcon onClick={handleDeleteClick}/>
         </MovieCard>
     )
 }

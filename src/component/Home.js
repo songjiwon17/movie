@@ -1,11 +1,12 @@
 import Header from "./Header";
 import SearchForm from './SearchForm';
 import * as React from 'react';
-import items from '../mock.json';
 import MovieList from './MovieList';
 import { Container, Box, Button } from '@mui/material';
-import {Suspense, useEffect, useState} from "react";
+import { Suspense, useEffect, useState } from "react";
 import {getMovies} from "../api";
+
+const  LIMIT = 6;
 
 function Home(){
     const [items, setItems] = useState([]);
@@ -14,11 +15,21 @@ function Home(){
 
     const handleLoad = async () => {
         const { reviews } = await getMovies();
-        setItems(reviews);
+        setItems(reviews)
     }
+
+    // 베스트순
+    const handleBestClick = ()=> setOrder('rating');
+
+    // 삭제
+    const handleDelete = (id) =>{
+        const nextItems = items.filter((item)=>item.id !== id);
+        setItems(nextItems);
+    }
+
     useEffect(() => {
-        handleLoad();
-    }, [])
+        handleLoad({order});
+    }, [order])
 
     const MovieList = React.lazy(()=>import('./MovieList'));
 
@@ -27,9 +38,9 @@ function Home(){
             <Box>
             <Header/>
             <SearchForm/>
-                <Button>불러오기</Button>
+                <Button onClick={handleBestClick}>베스트순</Button>
                 <Suspense fallback={<div>로딩중...</div>}>
-                    <MovieList items={sortedItems}/>
+                    <MovieList items={sortedItems} onDelete={handleDelete}/>
                 </Suspense>
             </Box>
         </Container>
