@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* base */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+  color: #fff;
+  font-size: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  border: none;
+}
+
+/* Home */
+body{
+  background-color: #000;
+}
+
+/* movie */
+.movie {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  color: #f9f9f9;
+  text-decoration: none;
+  background-color: #1f1f1f;
+  border: 1px solid #252525;
+  border-radius: 10px;
+}
+
+.image {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
