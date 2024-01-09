@@ -1,8 +1,8 @@
+import styled from "@emotion/styled";
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import {useState} from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import IconButton from "@mui/material/IconButton";
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 function SearchForm(){
     const [searchInput, setSearchInput] = useState('');
@@ -13,7 +13,7 @@ function SearchForm(){
     return(
             <Box 
                 component="form"
-                sx={{'& .MuiTextField-root': { m: 1, width: '50ch' }, display:'flex',justifyContent:'center',alignItems:'center'}}
+                sx={{'& .MuiTextField-root': { m: 1, width: '40ch' }, bgcolor:'pink'}}
                 noValidate
                 autoComplete="off">
                 <TextField 
@@ -22,9 +22,7 @@ function SearchForm(){
                 sx={{bgcolor: '#fff'}} 
                 placeholder="영화 제목을 입력하세요"
                 onChange={handleChange}/>
-                <IconButton type="submit" sx={{ p: "20px" }} aria-label="search" size='large'>
-                    <SearchIcon fontSize="large"/>
-                </IconButton>
+                <SearchOutlinedIcon/>
             </Box>
     );
 }

@@ -13,7 +13,7 @@ function SearchForm(){
     return(
             <Box 
                 component="form"
-                sx={{'& .MuiTextField-root': { m: 1, width: '50ch' }, display:'flex',justifyContent:'center',alignItems:'center'}}
+                sx={{'& .MuiTextField-root': { m: 1, width: '40ch' }, display:'flex',justifyContent:'center',alignItems:'center',bgcolor:'pink'}}
                 noValidate
                 autoComplete="off">
                 <TextField 
@@ -22,8 +22,8 @@ function SearchForm(){
                 sx={{bgcolor: '#fff'}} 
                 placeholder="영화 제목을 입력하세요"
                 onChange={handleChange}/>
-                <IconButton type="submit" sx={{ p: "20px" }} aria-label="search" size='large'>
-                    <SearchIcon fontSize="large"/>
+                <IconButton type="submit" sx={{ p: "10px" }} aria-label="search" size='large'>
+                    <SearchIcon />
                 </IconButton>
             </Box>
     );

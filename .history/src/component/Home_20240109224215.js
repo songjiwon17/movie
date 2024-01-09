@@ -33,12 +33,14 @@ function Home(){
 
     return(
         <Container component='main' maxWidth='lg' sx={{mt:10, padding:10}}>
+          
             <Header/>
             <SearchForm/>
                 <Button onClick={handleBestClick}>베스트순</Button>
                 <Suspense fallback={<div>로딩중...</div>}>
                     <MovieList items={sortedItems} onDelete={handleDelete}/>
                 </Suspense>
+           
         </Container>
     )
 }

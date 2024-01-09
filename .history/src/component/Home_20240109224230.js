@@ -38,7 +38,7 @@ function Home(){
                 <Button onClick={handleBestClick}>베스트순</Button>
                 <Suspense fallback={<div>로딩중...</div>}>
                     <MovieList items={sortedItems} onDelete={handleDelete}/>
-                </Suspense>
+            </Suspense>
         </Container>
     )
 }
