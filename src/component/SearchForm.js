@@ -4,16 +4,17 @@ import {useState} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 
-function SearchForm(){
-    const [keyword, setKeyword] = useState('');
+function SearchForm({initialValue = ''}){
+    const [value, setValue] = useState(initialValue);
+
     const handleChange = (e)=>{
-        setKeyword(e.target.value);
+        setValue(e.target.value);
     }
 
     return(
-            <Box 
+            <Box
                 component="form"
-                sx={{'& .MuiTextField-root': { m: 1, width: '50ch' }, display:'flex',justifyContent:'center',alignItems:'center'}}
+                sx={{'& .MuiTextField-root': { m: 1, width: '30ch' }, display:'flex',justifyContent:'center',alignItems:'center'}}
                 noValidate
                 autoComplete="off">
                 <TextField 
@@ -22,7 +23,7 @@ function SearchForm(){
                 sx={{bgcolor: '#fff'}}
                 placeholder="영화 제목을 입력하세요"
                 onChange={handleChange}/>
-                <IconButton value={keyword} type="submit" sx={{ p: "20px" }} aria-label="search" size='large'>
+                <IconButton type="submit" sx={{ p: "20px" }} aria-label="search" size='large'>
                     <SearchIcon fontSize="large"/>
                 </IconButton>
             </Box>
