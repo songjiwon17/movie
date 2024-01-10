@@ -5,9 +5,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 
 function SearchForm(){
-    const [searchInput, setSearchInput] = useState('');
+    const [keyword, setKeyword] = useState('');
     const handleChange = (e)=>{
-        setSearchInput(e.target.value);
+        setKeyword(e.target.value);
     }
 
     return(
@@ -22,7 +22,7 @@ function SearchForm(){
                 sx={{bgcolor: '#fff'}}
                 placeholder="영화 제목을 입력하세요"
                 onChange={handleChange}/>
-                <IconButton type="submit" sx={{ p: "20px" }} aria-label="search" size='large'>
+                <IconButton value={keyword} type="submit" sx={{ p: "20px" }} aria-label="search" size='large'>
                     <SearchIcon fontSize="large"/>
                 </IconButton>
             </Box>

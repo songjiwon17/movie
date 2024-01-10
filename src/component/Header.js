@@ -2,6 +2,7 @@ import { Button, Typography } from "@mui/material";
 import {Grid} from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import {Link} from 'react-router-dom';
 
 function Header(){
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Header(){
         <>
             <Grid container sx={{mb:10}}>
                 <Grid item xs>
-                    <Typography sx={{textAlign:'center', fontWeight:'bold'}} component="h1" variant="h2">MOVIE</Typography>
+                    <Link to='/'><Typography sx={{textAlign:'center', fontWeight:'bold'}} component="h1" variant="h2">MOVIE</Typography></Link>
                 </Grid>
                 <Grid item>
                     <Button><DarkModeIcon/></Button>
