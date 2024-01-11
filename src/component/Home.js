@@ -5,6 +5,7 @@ import MovieList from './MovieList';
 import { Container, Button, Box } from '@mui/material';
 import { Suspense, useEffect, useState } from "react";
 import {getMovies} from "../api";
+import styled, { ThemeProvider } from 'styled-components';
 
 const LIMIT  = 10;
 function Home(){
@@ -45,12 +46,12 @@ function Home(){
 
     return(
         <Container fixed sx={{mt:10, padding:10}}>
-            <Header/>            
+            <Header/>
             <SearchForm/>
             <Box>
                 <Button variant="contained" onClick={handleBestClick}>베스트순</Button>
                 <Suspense fallback={<div>로딩중...</div>}>
-                    <MovieList items={sortedItems}/>
+                    <MovieList items={sortedItems} onDelete={handleDelete}/>
                     {hasNext && <Button variant="contained" onClick={handleLoadMore}>더보기</Button>}
                 </Suspense>
             </Box>

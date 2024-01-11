@@ -1,7 +1,6 @@
 import {useState} from "react";
 import styled from "@emotion/styled";
-import {Typography} from "@mui/material";
-import { Button } from '@mui/material';
+import {Box, Grid, Typography} from "@mui/material";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DeleteOutlineSharpIcon from '@mui/icons-material/DeleteOutlineSharp';
 
@@ -20,15 +19,19 @@ function MovieListItem({item, onDelete}){
     const handleDeleteClick = ()=> onDelete(item.id);
 
     return(
-        <MovieCard>
-            <img className="MovieListItem-img" src={item?.imgUrl} alt={item?.title}/>
-            <Typography>
-                <h1>{item?.title}</h1>
-                <p>{formatDate(item?.createdAt)}</p>
-            </Typography>
-            <FavoriteBorderIcon onClick = {()=>{setLike(like + 1)}}/>{like}
-            <DeleteOutlineSharpIcon onClick={handleDeleteClick}/>
-        </MovieCard>
+        <Grid key={item.id} elevation={6} sx={{margin:'0.5rem' ,border:'1px solid #ededed'}}>
+            <Grid sx={{textAlign:'center'}}>
+                <Box
+                    sx={{width: 250, height: 350}}
+                    component="img"
+                    src={item.imgUrl}
+                    alt={item.title}
+                />
+                <Typography variant="h6" sx={{color: '#fff', p:2}}>{item.title}</Typography>
+                <FavoriteBorderIcon onClick = {()=>{setLike(like + 1)}}/>{like}
+                <DeleteOutlineSharpIcon onClick={handleDeleteClick}/>
+            </Grid>
+        </Grid>
     )
 }
 
