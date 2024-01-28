@@ -4,7 +4,6 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 
 function MovieDetail() {
   const { id } = useParams();
-  console.log(useParams());
   const item = getMovies(id);
 
   return (
@@ -18,11 +17,11 @@ function MovieDetail() {
           <Box
             sx={{ width: 250, height: 350 }}
             component="img"
-            src={item.imgUrl}
+            src={id.imgUrl}
             alt={item.title}
           />
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
-            {id}
+            {id}입니다.
           </Typography>
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
             {item.title}

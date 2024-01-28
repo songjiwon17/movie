@@ -22,7 +22,7 @@ function MovieDetail() {
             alt={item.title}
           />
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
-            {id}
+            {id}입니다.
           </Typography>
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
             {item.title}

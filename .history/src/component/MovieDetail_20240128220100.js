@@ -2,15 +2,14 @@ import { useParams } from "react-router-dom";
 import { getMovies } from "./api";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
-function MovieDetail() {
+function MovieDetail({ item, imgUrl, title }) {
   const { id } = useParams();
-  console.log(useParams());
-  const item = getMovies(id);
+  //   const item = getMovies(id);
 
   return (
     <Container>
       <Grid
-        key={id}
+        key={item.id}
         elevation={6}
         sx={{ margin: "0.5rem", border: "1px solid #ededed" }}
       >
@@ -21,9 +20,6 @@ function MovieDetail() {
             src={item.imgUrl}
             alt={item.title}
           />
-          <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
-            {id}
-          </Typography>
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
             {item.title}
           </Typography>

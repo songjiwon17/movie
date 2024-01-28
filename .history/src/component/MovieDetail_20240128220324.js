@@ -4,13 +4,12 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 
 function MovieDetail() {
   const { id } = useParams();
-  console.log(useParams());
   const item = getMovies(id);
 
   return (
     <Container>
       <Grid
-        key={id}
+        key={item.id}
         elevation={6}
         sx={{ margin: "0.5rem", border: "1px solid #ededed" }}
       >
@@ -22,10 +21,10 @@ function MovieDetail() {
             alt={item.title}
           />
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
-            {id}
+            {id}입니다.
           </Typography>
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
-            {item.title}
+            {title}
           </Typography>
         </Grid>
       </Grid>

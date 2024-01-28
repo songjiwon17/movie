@@ -4,7 +4,6 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 
 function MovieDetail() {
   const { id } = useParams();
-  console.log(useParams());
   const item = getMovies(id);
 
   return (
@@ -22,10 +21,10 @@ function MovieDetail() {
             alt={item.title}
           />
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
-            {id}
+            {id}입니다.
           </Typography>
           <Typography variant="h6" sx={{ color: "#fff", p: 2 }}>
-            {item.title}
+            {id.title}입니다.
           </Typography>
         </Grid>
       </Grid>
