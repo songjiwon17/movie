@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Container, Button, Box, Grid } from "@mui/material";
+import { Container, Button, Box } from "@mui/material";
 import { Suspense, useEffect, useState } from "react";
-import { getMovies } from "./api";
+import { getMovies } from "../api";
 import MovieListItem from "./MovieListItem";
 
 const LIMIT = 10;
@@ -11,7 +11,7 @@ function MovieList() {
   const [order, setOrder] = useState("createdAt");
   const [offset, setOffset] = useState(0);
   const [hasNext, setHasNext] = useState(false);
-  const sortedItems = items.sort((a, b) => b[order] - a[order]);
+  // const sortedItems = items.sort((a,b)=>b[order] - a[order]);
 
   // 베스트순
   const handleBestClick = () => setOrder("rating");
@@ -57,13 +57,7 @@ function MovieList() {
             sx={{ display: "flex" }}
           >
             {items?.map((item) => {
-              return (
-                <MovieListItem
-                  key={item.id}
-                  item={item}
-                  onDelete={handleDelete}
-                />
-              );
+              return <MovieListItem item={item} onDelete={onDelete} />;
             })}
           </Grid>
           {/* <MovieList items={sortedItems} onDelete={handleDelete}/> */}

@@ -1,8 +1,8 @@
 import { Button, Typography } from "@mui/material";
-import { Grid } from '@mui/material';
+import {Grid} from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Header(){
     const navigate = useNavigate();

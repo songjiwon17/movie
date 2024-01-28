@@ -1,12 +1,16 @@
-import * as React from "react";
-import { Container, Button, Box, Grid } from "@mui/material";
-import { Suspense, useEffect, useState } from "react";
-import { getMovies } from "./api";
+import { Grid, Box, Typography } from "@mui/material";
 import MovieListItem from "./MovieListItem";
+import Header from "./Header";
+/* import SearchForm from './SearchForm'; */
+import * as React from "react";
+import { Container, Button, Box } from "@mui/material";
+import { Suspense, useEffect, useState } from "react";
+import { getMovies } from "../api";
+/* import styled, { ThemeProvider } from 'styled-components'; */
 
 const LIMIT = 10;
 
-function MovieList() {
+function MovieList({ items, onDelete }) {
   const [items, setItems] = useState([]);
   const [order, setOrder] = useState("createdAt");
   const [offset, setOffset] = useState(0);
@@ -41,40 +45,18 @@ function MovieList() {
   }, [order]);
 
   const MovieList = React.lazy(() => import("./MovieList"));
-
   return (
-    <Container fixed sx={{ mt: 10, padding: 10 }}>
-      <Box>
-        <Button variant="contained" onClick={handleBestClick}>
-          베스트순
-        </Button>
-        <Suspense fallback={<div>로딩중...</div>}>
-          <Grid
-            container
-            p={6}
-            spacing={{ xs: 2, md: 6 }}
-            columns={{ xs: 4, sm: 8, md: 12 }}
-            sx={{ display: "flex" }}
-          >
-            {items?.map((item) => {
-              return (
-                <MovieListItem
-                  key={item.id}
-                  item={item}
-                  onDelete={handleDelete}
-                />
-              );
-            })}
-          </Grid>
-          {/* <MovieList items={sortedItems} onDelete={handleDelete}/> */}
-          {hasNext && (
-            <Button variant="contained" onClick={handleLoadMore}>
-              더보기
-            </Button>
-          )}
-        </Suspense>
-      </Box>
-    </Container>
+    <Grid
+      container
+      p={6}
+      spacing={{ xs: 2, md: 6 }}
+      columns={{ xs: 4, sm: 8, md: 12 }}
+      sx={{ display: "flex" }}
+    >
+      {items?.map((item) => {
+        return <MovieListItem item={item} onDelete={onDelete} />;
+      })}
+    </Grid>
   );
 }
 export default MovieList;

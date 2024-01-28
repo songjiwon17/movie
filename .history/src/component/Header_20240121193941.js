@@ -1,12 +1,12 @@
 import { Button, Typography } from "@mui/material";
-import { Grid } from '@mui/material';
+import {Grid} from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Header(){
     const navigate = useNavigate();
-
+    
     const navigateToLogin = ()=>{
         navigate('/login');
     }
@@ -15,7 +15,7 @@ function Header(){
         <>
             <Grid container sx={{mb:10}}>
                 <Grid item xs>
-                    <Link to='/'><Typography sx={{textAlign:'center', fontWeight:'bold'}} component="h1" variant="h3">영화를 검색해보세요.</Typography></Link>
+                    <Link to='/'><Typography sx={{textAlign:'center', fontWeight:'bold'}} component="h1" variant="h2">MOVIE</Typography></Link>
                 </Grid>
                 <Grid item>
                     <Button><DarkModeIcon/></Button>

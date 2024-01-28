@@ -11,7 +11,7 @@ function MovieList() {
   const [order, setOrder] = useState("createdAt");
   const [offset, setOffset] = useState(0);
   const [hasNext, setHasNext] = useState(false);
-  const sortedItems = items.sort((a, b) => b[order] - a[order]);
+  // const sortedItems = items.sort((a,b)=>b[order] - a[order]);
 
   // 베스트순
   const handleBestClick = () => setOrder("rating");
