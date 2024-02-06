@@ -5,11 +5,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 
 function SearchForm({initialValue = ''}){
-    const [value, setValue] = useState(initialValue);
-
-    const handleChange = (e)=>{
-        setValue(e.target.value);
-    }
+    // const [value, setValue] = useState(initialValue);
+    //
+    // const handleChange = (e)=>{
+    //     setValue(e.target.value);
+    // }
 
     return(
             <Box
